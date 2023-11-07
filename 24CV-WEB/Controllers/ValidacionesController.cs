@@ -47,7 +47,12 @@ namespace _24CV_WEB.Controllers
             return View(_curriculumService.GetAll());
         }
 
-        
+        public IActionResult CView(int id)
+        {
+            Curriculum model = new Curriculum();
+            model= _curriculumService.GetById(id);
+            return View(model);
+        }
 
 
     }

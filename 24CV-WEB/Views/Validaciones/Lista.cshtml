@@ -32,10 +32,10 @@
                             }
                         </td>
                         <td>
-                            <button type="button" class="btn btn-outline-success" asp-action="EditarDatos" asp-controller="Validaciones">Editar</button>
+                            <a type="button" class="btn btn-outline-success" asp-action="CView" asp-controller="Validaciones" asp-route-id="@item.Id">Editar</a>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-outline-danger" asp-action="EliminarDatos" asp-controller="Validaciones">Eliminar</button>
+                            <button type="button" class="btn btn-outline-danger" asp-action="EliminarDatos" asp-controller="Validaciones" asp-route-id="@item.Id">Eliminar</button>
                         </td>
 
                     </tr>

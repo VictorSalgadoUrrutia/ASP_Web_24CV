@@ -2,6 +2,7 @@
 using _24CV_WEB.Repository;
 using _24CV_WEB.Repository.CurriculumDAO;
 using _24CV_WEB.Services.Contracts;
+using System.Collections.Generic;
 using System.Reflection.Metadata;
 
 namespace _24CV_WEB.Services.ContractServices
@@ -81,8 +82,24 @@ namespace _24CV_WEB.Services.ContractServices
 
 		public Curriculum GetById(int id)
 		{
-			throw new NotImplementedException();
+			try
+			{
+				Curriculum model = new Curriculum();
+				model = _repository.GetById(id);
+
+
+
+				return model;
+			}
+			catch (Exception e)
+			{
+
+				throw;
+			}
 		}
+
+
+		
 
 		public ResponseHelper Update(Curriculum model)
 		{
