@@ -13,7 +13,8 @@
                     <th>CURP</th>
                     <th>Image Path</th>
                     <th>Foto</th>
-
+                    <th>Editar</th>
+                    <th>Eliminar</th>
                 </tr>
             </thead>
             <tbody>
@@ -30,6 +31,13 @@
                                 <img src="~/Fotos/@item.RutaFoto" width="150" height="150">
                             }
                         </td>
+                        <td>
+                            <button type="button" class="btn btn-outline-success" asp-action="EditarDatos" asp-controller="Validaciones">Editar</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-outline-danger" asp-action="EliminarDatos" asp-controller="Validaciones">Eliminar</button>
+                        </td>
+
                     </tr>
                 }
             </tbody>

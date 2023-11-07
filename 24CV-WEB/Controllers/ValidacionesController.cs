@@ -46,5 +46,9 @@ namespace _24CV_WEB.Controllers
         {
             return View(_curriculumService.GetAll());
         }
+
+        
+
+
     }
 }
