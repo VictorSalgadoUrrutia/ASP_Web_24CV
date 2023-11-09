@@ -13,7 +13,7 @@
                     <th>CURP</th>
                     <th>Image Path</th>
                     <th>Foto</th>
-                    <th>Editar</th>
+                    <th>Ver CV</th>
                     <th>Eliminar</th>
                 </tr>
             </thead>
@@ -32,10 +32,10 @@
                             }
                         </td>
                         <td>
-                            <a type="button" class="btn btn-outline-success" asp-action="CView" asp-controller="Validaciones" asp-route-id="@item.Id">Editar</a>
+                            <a type="button" class="btn btn-outline-info" asp-action="CView" asp-controller="Validaciones" asp-route-id="@item.Id">Ver CV</a>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-outline-danger" asp-action="EliminarDatos" asp-controller="Validaciones" asp-route-id="@item.Id">Eliminar</button>
+                            <a type="button" class="btn btn-outline-danger" asp-action="DeleteInfo" asp-controller="Validaciones" asp-route-id="@item.Id">Eliminar</a>
                         </td>
 
                     </tr>

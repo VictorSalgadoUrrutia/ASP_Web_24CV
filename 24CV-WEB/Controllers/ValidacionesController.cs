@@ -54,6 +54,14 @@ namespace _24CV_WEB.Controllers
             return View(model);
         }
 
+        public async Task<IActionResult> DeleteInfo(int id)
+        {
+            string mensaje = "";
+            var response = await _curriculumService.Delete(id);
+            mensaje = response.Message;
+            TempData["msj"] = mensaje;
+            return RedirectToAction("Lista");
+        }
 
     }
 }

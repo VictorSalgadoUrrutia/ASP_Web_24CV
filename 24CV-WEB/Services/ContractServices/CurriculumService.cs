@@ -58,12 +58,30 @@ namespace _24CV_WEB.Services.ContractServices
 			return responseHelper;	
 		}
 
-		public ResponseHelper Delete(int id)
-		{
-			throw new NotImplementedException();
-		}
+        public async Task<ResponseHelper> Delete(int id)
+        {
+            ResponseHelper responseHelper = new ResponseHelper();
+            try
+            {
+                if (_repository.Delete(id) > 0)
+                {
+                    responseHelper.Success = true;
+                    responseHelper.Message = $"Se elimino con exito";
+                }
+                else
+                {
+                    responseHelper.Message = "Ocurrió un error al agregar el dato.";
+                }
+            }
+            catch (Exception e)
+            {
+                responseHelper.Message = $"Ocurrio un error al eliminar el dato. Error: {e.Message}";
+            }
 
-		public List<Curriculum> GetAll()
+            return responseHelper;
+        }
+
+        public List<Curriculum> GetAll()
 		{
 			List<Curriculum> list = new List<Curriculum>();
 
@@ -105,5 +123,10 @@ namespace _24CV_WEB.Services.ContractServices
 		{
 			throw new NotImplementedException();
 		}
-	}
+
+        Task<ResponseHelper> ICurriculumService.Update(Curriculum model)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
